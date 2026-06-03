@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Buon Gustaio</title>
+</head>
+<body>
+
+<!-- HEADER con immagine di sfondo -->
+<!-- Per cambiare lo sfondo: apri style.css e cerca "header" -->
+<!-- Sostituisci IMMAGINI/sfondo-header.jpg con il percorso della tua immagine -->
+<header>
+    <h1>Il Buon Gustaio</h1>
+    <p>Scopri dove mangiare bene tra tradizione e innovazione</p>
+</header>
+
+<!-- NAVBAR con logo e menu hamburger -->
+<nav>
+
+    <!-- LOGO nella navbar -->
+    <!-- Per aggiungere il logo: sostituisci IMMAGINI/logo.png con il percorso della tua immagine -->
+    <div class="nav-logo">
+        <img src=IMMAGINI/logo.png alt="Logo Il Buon Gustaio" class="logo-img">
+        <!-- Se non hai ancora il logo, puoi usare solo testo: -->
+        <!-- <span class="logo-testo">Il Buon Gustaio</span> -->
+    </div>
+
+    <!-- Pulsante hamburger (visibile solo su mobile) -->
+    <!-- Usa un input checkbox: nessun JavaScript necessario! -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Voci del menu -->
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#ristoranti">Ristoranti</a>
+        <a href="#contatti">Contatti</a>
+    </div>
+
+</nav>
+
+<!-- SEZIONE HOME -->
+<section id="home">
+    <h2>Benvenuti</h2>
+    <p>
+        Siamo una piattaforma dedicata alla valorizzazione dei ristoranti e delle tradizioni culinarie
+        del nostro territorio cremasco. Il nostro obiettivo è far conoscere le eccellenze locali,
+        mettendo in contatto ristoratori e appassionati di buona cucina. Raccontiamo storie, sapori
+        e identità attraverso una selezione di locali che rappresentano al meglio la qualità e
+        l'autenticità della zona. Crediamo nell'importanza del cibo come espressione culturale e
+        lavoriamo per offrire uno spazio semplice e accessibile a chi vuole scoprire e vivere nuove
+        esperienze gastronomiche.
+    </p>
+</section>
+
+<!-- SEZIONE RISTORANTI -->
+<section id="ristoranti">
+    <h2>I Nostri Ristoranti Consigliati</h2>
+
+    <!-- CARD 1 -->
+    <div class="restaurant">
+        <div class="restaurant-body">
+            <h3>Osteria Giosano</h3>
+            <p class="restaurant-tag">🍽️ Cucina del territorio · Izano (CR)</p>
+            <p>L'Osteria Giosano nasce nel 2007 ad Izano nel cremasco. Il nostro Menù alla carta,
+            si reinventa di mese in mese e si compone di piatti che privilegiano la stagionalità
+            dei prodotti e del territorio.</p>
+            <div class="info-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.4911180384063!2d9.753327020534298!3d45.35555760026831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47813ce023f08b2d%3A0x5d58b4f085d6a83f!2sOsteria%20Giosano!5e0!3m2!1sit!2sit!4v1775029111719!5m2!1sit!2sit"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <a href="https://www.osteriagiosano.it/" class="btn">Scopri di più</a>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="restaurant">
+        <div class="restaurant-body">
+            <h3>Trattoria "Al Balurdù"</h3>
+            <p class="restaurant-tag">🍽️ Cucina casalinga · Crema (CR)</p>
+            <p>Siamo un punto di riferimento per chi cerca piatti preparati con ingredienti locali
+            e stagionali e una dedizione alla tradizione che si sente in ogni boccone. Se cerchi
+            un'autentica Trattoria a Crema, il nostro è il luogo semplice e genuino dove il gusto
+            di casa si accompagna all'atmosfera calorosa di una volta.</p>
+            <div class="info-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2803.6710287828764!2d9.676441293558513!3d45.35545259584059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47813b3c1aab1cd3%3A0xf067e55e8b46159!2sTrattoria%20al%20Balurd%C3%B9!5e0!3m2!1sit!2sit!4v1776843880229!5m2!1sit!2sit"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <a href="https://trattoriaalbalurdu.com/" class="btn">Scopri di più</a>
+        </div>
+    </div>
+
+    <!-- CARD 3 — esempio: aggiungi qui i tuoi ristoranti -->
+    <div class="restaurant">
+        <div class="restaurant-body">
+            <h3>Il Postiglione</h3>
+            <p class="restaurant-tag">🍽️ Tradizione rivisitata · Rubbiano (CR)</p>
+            <p>Una splendida cascina storica dove la tradizione cremasca incontra un tocco di creatività. Dai tortelli fatti in casa alle specialità stagionali di terra e di mare, un'esperienza autentica in un'atmosfera calda e accogliente.</p>
+            <div class="info-box">
+                <!-- Incolla qui il codice embed di Google Maps del tuo ristorante -->
+                <!-- Vai su Google Maps → cerca il locale → Condividi → Incorpora mappa -->
+                <p style="padding:10px; color:#888; font-style:italic;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2873571.4526421037!2d4.760588812499988!3d45.303938500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478125abdb25cdff%3A0x42523fbc01bcc69d!2sTrattoria%20Postiglione%20a%20Rubbiano!5e0!3m2!1sit!2sit!4v1780410186179!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="https://www.trattoriapostiglione.com/" class="btn">Scopri di più</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- SEZIONE CONTATTI -->
+<section id="contatti">
+    <h2>Contattaci</h2>
+    <p>📧 Email: ristoranti@gmail.com</p>
+    <p>📞 Telefono: +39 666 1234567</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2025 Il Buon Gustaio — Tutti i diritti riservati</p>
+    <a href="https://www.iubenda.com/privacy-policy/36512538" class="iubenda-white iubenda-noiframe iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+    <a href="https://www.iubenda.com/privacy-policy/36512538/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed" title="Cookie Policy ">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+</footer>
+
+</body>
+</html>

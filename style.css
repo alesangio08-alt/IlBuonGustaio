@@ -1,0 +1,355 @@
+/* =============================================
+   RESET BASE
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============================================
+   STILE GENERALE DEL CORPO PAGINA
+   ============================================= */
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    background-color: #f5f0eb;
+    color: #333;
+}
+
+/* =============================================
+   HEADER con immagine di sfondo
+   =============================================
+   Per cambiare lo sfondo: sostituisci
+   "IMMAGINI/sfondo-header.jpg" con il percorso
+   della tua immagine (es: IMMAGINI/foto.jpg)
+   ============================================= */
+header {
+    /* --- IMMAGINE DI SFONDO --- */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url('IMMAGINI/sfondo-header.jpg');
+
+    background-size: cover;       /* l'immagine copre tutto l'header */
+    background-position: center;  /* centra l'immagine */
+    background-repeat: no-repeat;
+
+    /* Colore di fallback se l'immagine non carica */
+    background-color: #8B0000;
+
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+header p {
+    font-size: 1.1rem;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+nav {
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;   /* rimane visibile mentre scorri */
+    top: 0;
+    z-index: 100;
+}
+
+/* --- LOGO nella navbar ---
+   Per aggiungere il logo: sostituisci IMMAGINI/logo.png
+   con il percorso della tua immagine
+   ------------------------------------------- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.logo-img {
+    height: 50px;          /* altezza del logo — modifica a piacere */
+    width: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Testo alternativo al logo (se non hai ancora l'immagine) */
+.logo-testo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- VOCI DEL MENU --- */
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #8B0000;
+}
+
+/* =============================================
+   MENU HAMBURGER (solo CSS, no JavaScript!)
+   =============================================
+   Funziona con un <input type="checkbox"> nascosto
+   e un <label> che lo attiva al click.
+   ============================================= */
+
+/* Nascondo il checkbox (non deve essere visibile) */
+#menu-toggle {
+    display: none;
+}
+
+/* Il pulsante hamburger: 3 linee orizzontali */
+.hamburger {
+    display: none;          /* nascosto su desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    /* Animazione smooth */
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Quando il checkbox è spuntato (menu aperto):
+   trasformo le 3 linee in una X */
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =============================================
+   SEZIONI
+   ============================================= */
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section h2 {
+    margin-bottom: 25px;
+    color: #8B0000;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #8B0000;
+    padding-bottom: 8px;
+}
+
+#home p {
+    max-width: 750px;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* =============================================
+   CARD RISTORANTI
+   ============================================= */
+.restaurant {
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    overflow: hidden;              /* serve per arrotondare anche l'immagine */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effetto hover: la card si alza leggermente */
+.restaurant:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Parte superiore della card: immagine + badge */
+.restaurant-header {
+    position: relative;
+}
+
+/* --- IMMAGINE DEL RISTORANTE ---
+   Se non hai ancora l'immagine, apparirà
+   un colore di sfondo al posto della foto */
+.restaurant-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;         /* ritaglia l'immagine senza deformarla */
+    background-color: #ddd;    /* colore mostrato se l'immagine manca */
+    display: block;
+}
+
+/* Etichetta colorata nell'angolo della card */
+.restaurant-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #8B0000;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Parte inferiore della card: testo */
+.restaurant-body {
+    padding: 20px;
+    border-top: 4px solid #8B0000;
+}
+
+.restaurant-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+}
+
+/* Riga con tipo cucina e città */
+.restaurant-tag {
+    color: #888;
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+    margin-bottom: 12px;
+}
+
+.restaurant-body p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* =============================================
+   BOX MAPPA
+   ============================================= */
+.info-box {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.info-box iframe {
+    display: block;     /* elimina lo spazio bianco sotto l'iframe */
+}
+
+/* =============================================
+   PULSANTE "SCOPRI DI PIÙ"
+   ============================================= */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8B0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: #6a0000;
+    transform: scale(1.03);
+}
+
+/* =============================================
+   SEZIONE CONTATTI
+   ============================================= */
+#contatti p {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+/* =============================================
+   RESPONSIVE — schermo piccolo (max 700px)
+   =============================================
+   Queste regole si attivano solo su mobile
+   ============================================= */
+@media (max-width: 700px) {
+
+    /* Mostro il pulsante hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Nascondo il menu voci per default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 66px;          /* altezza navbar */
+        left: 0;
+        background-color: #222;
+        z-index: 99;
+    }
+
+    /* Quando il checkbox è attivo: mostro il menu */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 15px;
+        border-top: 1px solid #444;
+    }
+
+    /* Riduco il titolo header su mobile */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Riduco l'altezza dell'immagine ristorante su mobile */
+    .restaurant-img {
+        height: 160px;
+    }
+}
